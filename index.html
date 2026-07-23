@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<!--
+  PERSONALIZE ME:
+  - Search for "EDIT:" comments throughout this file — those mark placeholder
+    text (email, GitHub/LinkedIn links, project details) that you should swap
+    for your real info before publishing.
+  - Colors and fonts live in the :root CSS variables near the top of <style>.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sangeetha Rajsubramanian — Computer Engineer &amp; Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F5E2DD;
+    --paper-line: #DFC3B6;
+    --ink: #443025;
+    --ink-soft: #7F5836;
+    --navy-deep: #443025;
+    --navy-mid: #7F5836;
+    --navy-line: #AA7F66;
+    --orange: #EC9C9D;
+    --teal: #AA7F66;
+    --yellow: #7F5836;
+    --white: #FFFFFF;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+
+    --nav-h: 64px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--paper);
+    background-image:
+      linear-gradient(var(--paper-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--paper-line) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-attachment: fixed;
+  }
+
+  a { color: inherit; }
+
+  h1, h2, h3 { font-family: var(--font-display); margin: 0; line-height: 1.05; }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--orange);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 8px; height: 8px;
+    background: var(--orange);
+    display: inline-block;
+  }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 56px);
+  }
+
+  /* ---------- Registration marks (recurring section motif) ---------- */
+  .section {
+    position: relative;
+    padding: 96px 0;
+    border-top: 1px solid var(--paper-line);
+  }
+  .reg-mark {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+  }
+  .reg-mark::before, .reg-mark::after {
+    content: "";
+    position: absolute;
+    background: var(--ink-soft);
+    opacity: 0.35;
+  }
+  .reg-mark::before { top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); }
+  .reg-mark::after { left: 50%; top: 0; height: 100%; width: 1px; transform: translateX(-50%); }
+  .reg-mark.tl { top: 18px; left: 18px; }
+  .reg-mark.tr { top: 18px; right: 18px; }
+  .section--dark .reg-mark::before, .section--dark .reg-mark::after { background: var(--teal); opacity: 0.5; }
+
+  /* ---------- Nav / title strip ---------- */
+  .titlebar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--nav-h);
+    background: rgba(245, 226, 221, 0.88);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--paper-line);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+  }
+  .titlebar__inner {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 56px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .titlebar__name {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .titlebar__name span { color: var(--ink-soft); font-size: 0.72rem; font-weight: 400; }
+  .titlebar__nav {
+    display: flex;
+    gap: 28px;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+  .titlebar__nav a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    position: relative;
+    padding-bottom: 3px;
+  }
+  .titlebar__nav a:hover, .titlebar__nav a:focus-visible { color: var(--orange); }
+  .titlebar__rev {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    border: 1px solid var(--paper-line);
+    padding: 4px 8px;
+    white-space: nowrap;
+  }
+  .navtoggle { display: none; }
+
+  @media (max-width: 720px) {
+    .titlebar__nav { display: none; }
+    .titlebar__rev { display: none; }
+    .navtoggle {
+      display: inline-flex;
+      background: none; border: 1px solid var(--paper-line);
+      color: var(--ink); font-family: var(--font-mono);
+      padding: 6px 10px; cursor: pointer;
+    }
+    .titlebar__mobilenav {
+      position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--paper-line);
+      display: none;
+      flex-direction: column;
+      z-index: 99;
+    }
+    .titlebar__mobilenav.open { display: flex; }
+    .titlebar__mobilenav a {
+      padding: 16px 24px;
+      font-family: var(--font-mono);
+      text-decoration: none;
+      color: var(--ink);
+      border-top: 1px solid var(--paper-line);
+    }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background: var(--navy-deep);
+    color: var(--white);
+    padding-top: calc(var(--nav-h) + 72px);
+    padding-bottom: 88px;
+    overflow: hidden;
+    border-top: none;
+  }
+  .hero__grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 860px) {
+    .hero__grid { grid-template-columns: 1fr; }
+  }
+  .hero__eyebrow { color: var(--yellow); }
+  .hero__eyebrow::before { background: var(--yellow); }
+  .hero h1 {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 700;
+    margin: 18px 0 20px;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--orange);
+  }
+  .hero p.lede {
+    font-size: 1.08rem;
+    color: #E4CBBE;
+    margin: 0 0 32px;
+  }
+  .hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-decoration: none;
+    padding: 13px 22px;
+    border: 1.5px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .btn:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
+  .btn--solid { background: var(--orange); color: var(--navy-deep); font-weight: 600; }
+  .btn--solid:hover { transform: translateY(-2px); }
+  .btn--ghost { border-color: #8A6A57; color: var(--white); }
+  .btn--ghost:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+
+  /* ---------- IC chip signature diagram ---------- */
+  .chip-wrap { display: flex; justify-content: center; }
+  .chip-wrap svg { width: 100%; max-width: 460px; height: auto; }
+  .pin-line {
+    stroke: var(--teal);
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    animation: draw 0.9s ease forwards;
+  }
+  .pin-line.orange { stroke: var(--orange); }
+  .pin-dot {
+    fill: var(--paper);
+    opacity: 0;
+    animation: fadein 0.4s ease forwards;
+  }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes fadein { to { opacity: 1; } }
+  .chip-body { fill: var(--navy-mid); stroke: var(--navy-line); stroke-width: 1.5; }
+  .chip-label-main { font-family: var(--font-mono); font-weight: 600; fill: var(--white); }
+  .chip-label-sub { font-family: var(--font-mono); fill: #D9C0AC; }
+  .pin-text { font-family: var(--font-mono); fill: #E4CBBE; font-size: 11px; }
+
+  /* ---------- About / terminals strip ---------- */
+  .terminals {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--paper-line);
+    margin-top: 40px;
+    border: 1px solid var(--paper-line);
+  }
+  @media (max-width: 720px) { .terminals { grid-template-columns: 1fr; } }
+  .terminal {
+    background: var(--paper);
+    padding: 28px 26px;
+  }
+  .terminal__tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+  .terminal:nth-child(1) .terminal__tag { background: var(--orange); color: var(--white); }
+  .terminal:nth-child(2) .terminal__tag { background: var(--teal); color: var(--white); }
+  .terminal:nth-child(3) .terminal__tag { background: var(--yellow); color: var(--white); }
+  .terminal h3 { font-size: 1.15rem; margin-bottom: 8px; }
+  .terminal p { color: var(--ink-soft); font-size: 0.94rem; margin: 0; }
+
+  .about-lede { max-width: 66ch; font-size: 1.04rem; color: var(--ink-soft); margin-top: 18px; }
+
+  /* ---------- Projects (datasheet cards) ---------- */
+  .proj-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 44px;
+  }
+  @media (max-width: 780px) { .proj-grid { grid-template-columns: 1fr; } }
+  .datasheet {
+    background: var(--white);
+    border: 1.5px solid var(--ink);
+    position: relative;
+  }
+  .datasheet__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    border-bottom: 1.5px solid var(--ink);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+  }
+  .datasheet__part { color: var(--ink-soft); }
+  .datasheet__status {
+    color: var(--teal);
+    font-weight: 600;
+  }
+  .datasheet__body { padding: 22px; }
+  .datasheet__body h3 { font-size: 1.28rem; margin-bottom: 10px; }
+  .datasheet__body p {
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+    margin: 0 0 18px;
+  }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    padding: 4px 9px;
+    border: 1px solid var(--paper-line);
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Skills BOM table ---------- */
+  .bom {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    font-size: 0.92rem;
+  }
+  .bom th, .bom td {
+    text-align: left;
+    padding: 13px 14px;
+    border-bottom: 1px solid var(--paper-line);
+  }
+  .bom th {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border-bottom: 1.5px solid var(--ink);
+  }
+  .bom td:first-child, .bom th:first-child { font-family: var(--font-mono); color: var(--orange); width: 60px; }
+  .bom tr:hover td { background: rgba(170, 127, 102, 0.1); }
+
+  .badge-row { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+  .badge {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    border: 1px dashed var(--ink-soft);
+    padding: 8px 14px;
+    color: var(--ink-soft);
+  }
+  .badge strong { color: var(--ink); }
+
+  /* ---------- Leadership stamps ---------- */
+  .stamp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 44px;
+  }
+  @media (max-width: 720px) { .stamp-grid { grid-template-columns: 1fr; } }
+  .stamp {
+    border: 2px solid var(--ink);
+    padding: 24px;
+    position: relative;
+  }
+  .stamp::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px dashed var(--ink-soft);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .stamp__eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--orange);
+  }
+  .stamp h3 { font-size: 1.1rem; margin: 10px 0 8px; }
+  .stamp p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
+
+  /* ---------- Footer / title block ---------- */
+  .footer {
+    background: var(--navy-deep);
+    color: var(--white);
+    padding: 80px 0 40px;
+  }
+  .footer .eyebrow { color: var(--yellow); }
+  .footer .eyebrow::before { background: var(--yellow); }
+  .footer h2 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); margin: 16px 0 36px; max-width: 16ch; }
+
+  .titleblock {
+    border: 1.5px solid var(--navy-line);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--navy-line);
+  }
+  @media (max-width: 720px) { .titleblock { grid-template-columns: repeat(2, 1fr); } }
+  .titleblock__cell {
+    padding: 18px;
+    background: var(--navy-deep);
+  }
+  .titleblock__label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: #D9C0AC;
+  }
+  .titleblock__value {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--white);
+    text-decoration: none;
+    word-break: break-word;
+  }
+  .titleblock__value:hover, .titleblock__value:focus-visible { color: var(--teal); }
+
+  .footer__bottom {
+    margin-top: 32px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #8A6A57;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<div class="titlebar">
+  <div class="titlebar__inner">
+    <a href="#top" class="titlebar__name">SANGEETHA R.<span>/ COMPUTER ENGINEER</span></a>
+    <ul class="titlebar__nav">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <span class="titlebar__rev">REV. 2026.07</span>
+    <button class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav">MENU</button>
+  </div>
+</div>
+<nav class="titlebar__mobilenav" id="mobileNav">
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#leadership">Leadership</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero section section--dark" id="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <span class="eyebrow hero__eyebrow">Year 3 · APU, Malaysia</span>
+        <h1>Building where <em>circuits</em> meet <em>code</em> meet <em>design</em>.</h1>
+        <p class="lede">Computer Engineering student working across embedded systems, software, and applied AI — and leading design for two student engineering bodies.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--solid" href="#projects">View projects</a>
+          <a class="btn btn--ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="chip-wrap">
+        <!-- Signature: identity rendered as an IC pinout diagram -->
+        <svg viewBox="0 0 420 360" role="img" aria-label="IC pinout diagram of skills: VHDL, LTSpice, MATLAB, Packet Tracer on the left; Python, Java, C++, Design on the right">
+          <!-- left pins -->
+          <g>
+            <line class="pin-line" x1="60" y1="90" x2="130" y2="90" style="animation-delay:0.1s"/>
+            <circle class="pin-dot" cx="60" cy="90" r="3.5" style="animation-delay:0.5s"/>
+            <text class="pin-text" x="10" y="94" text-anchor="start">VHDL</text>
+
+            <line class="pin-line" x1="60" y1="150" x2="130" y2="150" style="animation-delay:0.25s"/>
+            <circle class="pin-dot" cx="60" cy="150" r="3.5" style="animation-delay:0.65s"/>
+            <text class="pin-text" x="10" y="154" text-anchor="start">LTSPICE</text>
+
+            <line class="pin-line" x1="60" y1="210" x2="130" y2="210" style="animation-delay:0.4s"/>
+            <circle class="pin-dot" cx="60" cy="210" r="3.5" style="animation-delay:0.8s"/>
+            <text class="pin-text" x="10" y="214" text-anchor="start">MATLAB</text>
+
+            <line class="pin-line" x1="60" y1="270" x2="130" y2="270" style="animation-delay:0.55s"/>
+            <circle class="pin-dot" cx="60" cy="270" r="3.5" style="animation-delay:0.95s"/>
+            <text class="pin-text" x="10" y="274" text-anchor="start">PKT TRACER</text>
+          </g>
+          <!-- right pins -->
+          <g>
+            <line class="pin-line orange" x1="290" y1="90" x2="360" y2="90" style="animation-delay:0.15s"/>
+            <circle class="pin-dot" cx="360" cy="90" r="3.5" style="animation-delay:0.55s"/>
+            <text class="pin-text" x="410" y="94" text-anchor="end">PYTHON</text>
+
+            <line class="pin-line orange" x1="290" y1="150" x2="360" y2="150" style="animation-delay:0.3s"/>
+            <circle class="pin-dot" cx="360" cy="150" r="3.5" style="animation-delay:0.7s"/>
+            <text class="pin-text" x="410" y="154" text-anchor="end">JAVA</text>
+
+            <line class="pin-line orange" x1="290" y1="210" x2="360" y2="210" style="animation-delay:0.45s"/>
+            <circle class="pin-dot" cx="360" cy="210" r="3.5" style="animation-delay:0.85s"/>
+            <text class="pin-text" x="410" y="214" text-anchor="end">C++</text>
+
+            <line class="pin-line orange" x1="290" y1="270" x2="360" y2="270" style="animation-delay:0.6s"/>
+            <circle class="pin-dot" cx="360" cy="270" r="3.5" style="animation-delay:1s"/>
+            <text class="pin-text" x="410" y="274" text-anchor="end">DESIGN</text>
+          </g>
+          <!-- chip body -->
+          <rect class="chip-body" x="130" y="60" width="160" height="240" rx="2"/>
+          <path d="M 130 60 A 20 20 0 0 0 150 80 L 130 80 Z" fill="var(--navy-deep)"/>
+          <text class="chip-label-main" x="210" y="172" text-anchor="middle" font-size="17">SANGEETHA-3</text>
+          <text class="chip-label-sub" x="210" y="194" text-anchor="middle" font-size="10">COMPUTER ENGINEER</text>
+          <text class="chip-label-sub" x="210" y="210" text-anchor="middle" font-size="10">× DESIGN LEAD</text>
+          <text class="chip-label-sub" x="210" y="270" text-anchor="middle" font-size="9">Y3 · APU · MALAYSIA</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="reg-mark tl"></div><div class="reg-mark tr"></div>
+    <div class="wrap reveal">
+      <span class="eyebrow">01 — About</span>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.4rem); margin-top:14px;">Three terminals, one board.</h2>
+      <p class="about-lede">I move between hardware, software, and design without treating them as separate disciplines — a habit picked up from building full systems end-to-end, from RTL to UI to the poster announcing it.</p>
+      <div class="terminals">
+        <div class="terminal">
+          <span class="terminal__tag" style="color:var(--white);">HARDWARE</span>
+          <h3>Embedded &amp; Circuits</h3>
+          <p>VHDL, LTSpice, Cisco Packet Tracer, MATLAB — from RTL logic to simulated networks and circuits.</p>
+        </div>
+        <div class="terminal">
+          <span class="terminal__tag" style="color:var(--white);">SOFTWARE</span>
+          <h3>Applications &amp; AI</h3>
+          <p>Python, Java, C++ — management systems, and an agentic AI marketing assistant built on Streamlit.</p>
+        </div>
+        <div class="terminal">
+          <span class="terminal__tag">DESIGN</span>
+          <h3>Visual Leadership</h3>
+          <p>Head of Design for the IMechE APU Student Chapter and for ICDTSA '26, an APcore × IMechE × APU conference.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="reg-mark tl"></div><div class="reg-mark tr"></div>
+    <div class="wrap reveal">
+      <span class="eyebrow">02 — Projects</span>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.4rem); margin-top:14px;">Selected builds.</h2>
+      <div class="proj-grid">
+
+        <article class="datasheet">
+          <div class="datasheet__head">
+            <span class="datasheet__part">PART NO. MKT-AI-01</span>
+            <span class="datasheet__status">● SHIPPED</span>
+          </div>
+          <div class="datasheet__body">
+            <h3>AI-Powered Marketing Assistant</h3>
+            <p><!-- EDIT: add 2-3 sentences on the problem it solves, your role, and any results/metrics --> An agentic assistant that automates marketing workflows, built with Python and served through a Streamlit interface.</p>
+            <div class="tag-row">
+              <span class="tag">Python</span>
+              <span class="tag">Streamlit</span>
+              <span class="tag">Agentic AI</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="datasheet">
+          <div class="datasheet__head">
+            <span class="datasheet__part">PART NO. WMS-JV-02</span>
+            <span class="datasheet__status">● SHIPPED</span>
+          </div>
+          <div class="datasheet__body">
+            <h3>Wholesale Warehouse Management System</h3>
+            <p><!-- EDIT: describe scope — inventory, orders, users? team size? --> A Java application for tracking wholesale inventory and warehouse operations end to end.</p>
+            <div class="tag-row">
+              <span class="tag">Java</span>
+              <span class="tag">OOP</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="datasheet">
+          <div class="datasheet__head">
+            <span class="datasheet__part">PART NO. HTL-03</span>
+            <span class="datasheet__status">● SHIPPED</span>
+          </div>
+          <div class="datasheet__body">
+            <h3>Hotel Management System</h3>
+            <p><!-- EDIT: mention language/stack used and what it handles (bookings, billing, etc.) --> A system for managing bookings, guests, and day-to-day hotel operations.</p>
+            <div class="tag-row">
+              <span class="tag">Booking</span>
+              <span class="tag">CRUD</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="datasheet">
+          <div class="datasheet__head">
+            <span class="datasheet__part">PART NO. LIB-CPP-04</span>
+            <span class="datasheet__status">● SHIPPED</span>
+          </div>
+          <div class="datasheet__body">
+            <h3>Library Management System</h3>
+            <p><!-- EDIT: mention scale, features (catalogue, checkouts, overdue tracking) --> A C++ system for managing a library's catalogue, checkouts, and returns.</p>
+            <div class="tag-row">
+              <span class="tag">C++</span>
+              <span class="tag">Data Structures</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="reg-mark tl"></div><div class="reg-mark tr"></div>
+    <div class="wrap reveal">
+      <span class="eyebrow">03 — Skills</span>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.4rem); margin-top:14px;">Bill of materials.</h2>
+      <table class="bom">
+        <thead>
+          <tr><th>Ref</th><th>Component</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>U1</td><td>Python</td><td>Scripting, automation, agentic AI</td></tr>
+          <tr><td>U2</td><td>Java</td><td>Object-oriented application development</td></tr>
+          <tr><td>U3</td><td>C++</td><td>Systems &amp; data-structure heavy programs</td></tr>
+          <tr><td>U4</td><td>VHDL</td><td>RTL &amp; digital logic design</td></tr>
+          <tr><td>U5</td><td>MATLAB</td><td>Simulation &amp; signal analysis</td></tr>
+          <tr><td>U6</td><td>Cisco Packet Tracer</td><td>Network design &amp; simulation</td></tr>
+          <tr><td>U7</td><td>LTSpice</td><td>Circuit simulation</td></tr>
+          <tr><td>U8</td><td>Git / GitHub / VS Code</td><td>Version control &amp; dev environment</td></tr>
+          <tr><td>U9</td><td>Simulink</td><td>Model-based simulation</td></tr>
+          <tr><td>U10</td><td>GHDL 0.36</td><td>VHDL compilation &amp; simulation</td></tr>
+          <tr><td>U11</td><td>AWS</td><td>Cloud fundamentals</td></tr>
+        </tbody>
+      </table>
+      <div class="badge-row">
+        <span class="badge">CERT · <strong>Google Prompting Essentials</strong></span>
+        <span class="badge">CERT · <strong>Google Agent Fundamentals</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="section" id="leadership">
+    <div class="reg-mark tl"></div><div class="reg-mark tr"></div>
+    <div class="wrap reveal">
+      <span class="eyebrow">04 — Leadership</span>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.4rem); margin-top:14px;">Design, applied to teams.</h2>
+      <div class="stamp-grid">
+        <div class="stamp">
+          <span class="stamp__eyebrow">APRIL 2026 — PRESENT</span>
+          <h3>Head of Design</h3>
+          <p>IMechE APU Student Chapter — directing the design team's visual branding, event materials, and promotional content, and coordinating with committee members to keep deliverables aligned with event timelines.</p>
+        </div>
+        <div class="stamp">
+          <span class="stamp__eyebrow">CURRENT ROLE</span>
+          <h3>Head of Design, ICDTSA '26</h3>
+          <p>International Conference on Digital Technologies for Sustainable Agriculture — a joint APcore × IMechE × APU conference.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER / TITLE BLOCK -->
+<footer class="footer" id="contact">
+  <div class="wrap">
+    <span class="eyebrow">05 — Contact</span>
+    <h2>Let's build something together.</h2>
+    <div class="titleblock">
+      <div class="titleblock__cell">
+        <span class="titleblock__label">EMAIL</span>
+        <a class="titleblock__value" href="mailto:sangeetha.rajsubramanian@gmail.com">sangeetha.rajsubramanian@gmail.com</a>
+      </div>
+      <div class="titleblock__cell">
+        <span class="titleblock__label">LOCATION</span>
+        <span class="titleblock__value">Kuala Lumpur, Malaysia</span>
+      </div>
+      <div class="titleblock__cell">
+        <span class="titleblock__label">AVAILABILITY</span>
+        <span class="titleblock__value">16-week internship, Oct '26–Feb '27</span>
+      </div>
+      <div class="titleblock__cell">
+        <span class="titleblock__label">MOBILITY</span>
+        <span class="titleblock__value">Open to travel (60%+) &amp; relocation</span>
+      </div>
+      <div class="titleblock__cell">
+        <span class="titleblock__label">GITHUB</span>
+        <a class="titleblock__value" href="https://github.com/sanriocub" target="_blank" rel="noopener">github.com/sanriocub</a>
+      </div>
+      <div class="titleblock__cell">
+        <span class="titleblock__label">LINKEDIN</span>
+        <a class="titleblock__value" href="https://linkedin.com/in/sangeetharajsubramanian" target="_blank" rel="noopener">linkedin.com/in/sangeetharajsubramanian</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>SHEET 1/1 · SANGEETHA RAJSUBRAMANIAN PORTFOLIO</span>
+      <span>REV. 2026.07</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  navToggle.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
