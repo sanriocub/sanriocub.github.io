@@ -10,22 +10,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sangeetha Rajsubramanian — Computer Engineer &amp; Designer</title>
+<title>Sangeetha Rajsubramanian, Computer Engineer &amp; Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #F5E2DD;
-    --paper-line: #DFC3B6;
-    --ink: #443025;
-    --ink-soft: #7F5836;
-    --navy-deep: #443025;
-    --navy-mid: #7F5836;
-    --navy-line: #AA7F66;
-    --orange: #EC9C9D;
-    --teal: #AA7F66;
-    --yellow: #7F5836;
+    --paper: #F7E4EC;
+    --paper-line: #ECC8D9;
+    --ink: #37331B;
+    --ink-soft: #6B7233;
+    --navy-deep: #4A2036;
+    --navy-mid: #7A3B54;
+    --navy-line: #8FACD9;
+    --orange: #CBAA4C;
+    --teal: #8FACD9;
+    --yellow: #6B7233;
     --white: #FFFFFF;
 
     --font-display: 'Space Grotesk', sans-serif;
@@ -64,7 +64,8 @@
     font-size: 0.72rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--orange);
+    color: var(--navy-deep);
+    font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -72,7 +73,7 @@
   .eyebrow::before {
     content: "";
     width: 8px; height: 8px;
-    background: var(--orange);
+    background: var(--navy-deep);
     display: inline-block;
   }
 
@@ -111,7 +112,7 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     height: var(--nav-h);
-    background: rgba(245, 226, 221, 0.88);
+    background: rgba(247, 228, 236, 0.88);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--paper-line);
     z-index: 100;
@@ -210,8 +211,8 @@
   @media (max-width: 860px) {
     .hero__grid { grid-template-columns: 1fr; }
   }
-  .hero__eyebrow { color: var(--yellow); }
-  .hero__eyebrow::before { background: var(--yellow); }
+  .hero__eyebrow { color: var(--orange); font-weight: 600; }
+  .hero__eyebrow::before { background: var(--orange); }
   .hero h1 {
     font-size: clamp(2.4rem, 6vw, 4rem);
     font-weight: 700;
@@ -224,7 +225,8 @@
   }
   .hero p.lede {
     font-size: 1.08rem;
-    color: #E4CBBE;
+    color: #E4BFCF;
+    max-width: 46ch;
     margin: 0 0 32px;
   }
   .hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -242,7 +244,7 @@
   .btn:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
   .btn--solid { background: var(--orange); color: var(--navy-deep); font-weight: 600; }
   .btn--solid:hover { transform: translateY(-2px); }
-  .btn--ghost { border-color: #8A6A57; color: var(--white); }
+  .btn--ghost { border-color: #9C5C78; color: var(--white); }
   .btn--ghost:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
 
   /* ---------- IC chip signature diagram ---------- */
@@ -266,8 +268,8 @@
   @keyframes fadein { to { opacity: 1; } }
   .chip-body { fill: var(--navy-mid); stroke: var(--navy-line); stroke-width: 1.5; }
   .chip-label-main { font-family: var(--font-mono); font-weight: 600; fill: var(--white); }
-  .chip-label-sub { font-family: var(--font-mono); fill: #D9C0AC; }
-  .pin-text { font-family: var(--font-mono); fill: #E4CBBE; font-size: 11px; }
+  .chip-label-sub { font-family: var(--font-mono); fill: #E3B8C8; }
+  .pin-text { font-family: var(--font-mono); fill: #E4BFCF; font-size: 11px; }
 
   /* ---------- About / terminals strip ---------- */
   .terminals {
@@ -307,6 +309,7 @@
     margin-top: 44px;
   }
   @media (max-width: 780px) { .proj-grid { grid-template-columns: 1fr; } }
+  .datasheet--full { grid-column: 1 / -1; }
   .datasheet {
     background: var(--white);
     border: 1.5px solid var(--ink);
@@ -324,7 +327,7 @@
   }
   .datasheet__part { color: var(--ink-soft); }
   .datasheet__status {
-    color: var(--teal);
+    color: var(--navy-mid);
     font-weight: 600;
   }
   .datasheet__body { padding: 22px; }
@@ -363,8 +366,18 @@
     color: var(--ink-soft);
     border-bottom: 1.5px solid var(--ink);
   }
-  .bom td:first-child, .bom th:first-child { font-family: var(--font-mono); color: var(--orange); width: 60px; }
-  .bom tr:hover td { background: rgba(170, 127, 102, 0.1); }
+  .bom td:first-child, .bom th:first-child { font-family: var(--font-mono); color: var(--navy-deep); width: 60px; }
+  .bom tr:hover td { background: rgba(143, 172, 217, 0.12); }
+  .bom tr.bom-cat td {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy-deep);
+    padding: 20px 14px 6px;
+    border-bottom: none;
+    background: transparent !important;
+  }
 
   .badge-row { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
   .badge {
@@ -379,11 +392,12 @@
   /* ---------- Leadership stamps ---------- */
   .stamp-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 22px;
     margin-top: 44px;
   }
-  @media (max-width: 720px) { .stamp-grid { grid-template-columns: 1fr; } }
+  .stamp-grid--pair { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 900px) { .stamp-grid, .stamp-grid--pair { grid-template-columns: 1fr; } }
   .stamp {
     border: 2px solid var(--ink);
     padding: 24px;
@@ -401,7 +415,8 @@
     font-family: var(--font-mono);
     font-size: 0.7rem;
     letter-spacing: 0.1em;
-    color: var(--orange);
+    color: var(--navy-deep);
+    font-weight: 600;
   }
   .stamp h3 { font-size: 1.1rem; margin: 10px 0 8px; }
   .stamp p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
@@ -412,8 +427,8 @@
     color: var(--white);
     padding: 80px 0 40px;
   }
-  .footer .eyebrow { color: var(--yellow); }
-  .footer .eyebrow::before { background: var(--yellow); }
+  .footer .eyebrow { color: var(--orange); font-weight: 600; }
+  .footer .eyebrow::before { background: var(--orange); }
   .footer h2 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); margin: 16px 0 36px; max-width: 16ch; }
 
   .titleblock {
@@ -432,7 +447,9 @@
     font-family: var(--font-mono);
     font-size: 0.68rem;
     letter-spacing: 0.1em;
-    color: #D9C0AC;
+    color: #E3B8C8;
+    display: block;
+    margin-bottom: 8px;
   }
   .titleblock__value {
     font-family: var(--font-mono);
@@ -447,7 +464,7 @@
     margin-top: 32px;
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    color: #8A6A57;
+    color: #A97690;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -469,6 +486,7 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#work">Work</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <span class="titlebar__rev">REV. 2026.07</span>
@@ -480,6 +498,7 @@
   <a href="#projects">Projects</a>
   <a href="#skills">Skills</a>
   <a href="#leadership">Leadership</a>
+  <a href="#work">Work</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -491,11 +510,12 @@
       <div>
         <span class="eyebrow hero__eyebrow">Year 3 · APU, Malaysia</span>
         <h1>Building where <em>circuits</em> meet <em>code</em> meet <em>design</em>.</h1>
-        <p class="lede">Computer Engineering student working across embedded systems, software, and applied AI — and leading design for two student engineering bodies.</p>
+        <p class="lede">Computer Engineering student working across embedded systems, software and applied AI, while also leading design for two student engineering bodies.</p>
         <div class="hero__ctas">
           <a class="btn btn--solid" href="#projects">View projects</a>
           <a class="btn btn--ghost" href="#contact">Get in touch</a>
         </div>
+        <p style="margin-top:28px; font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.04em; color:#E4BFCF;">English (Fluent) · Mandarin (Fluent) · Bahasa Malaysia (Fluent) · Tamil (Intermediate)</p>
       </div>
       <div class="chip-wrap">
         <!-- Signature: identity rendered as an IC pinout diagram -->
@@ -539,7 +559,7 @@
           <!-- chip body -->
           <rect class="chip-body" x="130" y="60" width="160" height="240" rx="2"/>
           <path d="M 130 60 A 20 20 0 0 0 150 80 L 130 80 Z" fill="var(--navy-deep)"/>
-          <text class="chip-label-main" x="210" y="172" text-anchor="middle" font-size="17">SANGEETHA-3</text>
+          <text class="chip-label-main" x="210" y="172" text-anchor="middle" font-size="17">SANGEETHA ☆</text>
           <text class="chip-label-sub" x="210" y="194" text-anchor="middle" font-size="10">COMPUTER ENGINEER</text>
           <text class="chip-label-sub" x="210" y="210" text-anchor="middle" font-size="10">× DESIGN LEAD</text>
           <text class="chip-label-sub" x="210" y="270" text-anchor="middle" font-size="9">Y3 · APU · MALAYSIA</text>
@@ -552,24 +572,24 @@
   <section class="section" id="about">
     <div class="reg-mark tl"></div><div class="reg-mark tr"></div>
     <div class="wrap reveal">
-      <span class="eyebrow">01 — About</span>
-      <h2 style="font-size:clamp(1.8rem,4vw,2.4rem); margin-top:14px;">Three terminals, one board.</h2>
-      <p class="about-lede">I move between hardware, software, and design without treating them as separate disciplines — a habit picked up from building full systems end-to-end, from RTL to UI to the poster announcing it.</p>
+      <span class="eyebrow">01. About</span>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.4rem); margin-top:14px; color:var(--navy-mid);">Three terminals, one board.</h2>
+      <p class="about-lede">I move between hardware, software and design without treating them as separate disciplines. It's a habit picked up from building full systems end to end, from RTL to UI to the poster announcing it.</p>
       <div class="terminals">
         <div class="terminal">
           <span class="terminal__tag" style="color:var(--white);">HARDWARE</span>
           <h3>Embedded &amp; Circuits</h3>
-          <p>VHDL, LTSpice, Cisco Packet Tracer, MATLAB — from RTL logic to simulated networks and circuits.</p>
+          <p>VHDL, LTSpice, Cisco Packet Tracer and MATLAB, from RTL logic to simulated networks and circuits.</p>
         </div>
         <div class="terminal">
           <span class="terminal__tag" style="color:var(--white);">SOFTWARE</span>
           <h3>Applications &amp; AI</h3>
-          <p>Python, Java, C++ — management systems, and an agentic AI marketing assistant built on Streamlit.</p>
+          <p>Python, Java, C++: management systems and an agentic AI marketing assistant built on Streamlit.</p>
         </div>
         <div class="terminal">
           <span class="terminal__tag">DESIGN</span>
           <h3>Visual Leadership</h3>
-          <p>Head of Design for the IMechE APU Student Chapter and for ICDTSA '26, an APcore × IMechE × APU conference.</p>
+          <p>Head of Design for the Institute of Mechanical Engineers (IMechE) APU Student Chapter and for ICDTSA '26, an APcore × IMechE × APU conference.</p>
         </div>
       </div>
     </div>
@@ -579,67 +599,82 @@
   <section class="section" id="projects">
     <div class="reg-mark tl"></div><div class="reg-mark tr"></div>
     <div class="wrap reveal">
-      <span class="eyebrow">02 — Projects</span>
-      <h2 style="font-size:clamp(1.8rem,4vw,2.4rem); margin-top:14px;">Selected builds.</h2>
+      <span class="eyebrow">02. Projects</span>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.4rem); margin-top:14px; color:var(--navy-mid);">Selected builds.</h2>
       <div class="proj-grid">
 
         <article class="datasheet">
           <div class="datasheet__head">
-            <span class="datasheet__part">PART NO. MKT-AI-01</span>
+            <span class="datasheet__part">PART NO. SIM MAT 01</span>
             <span class="datasheet__status">● SHIPPED</span>
           </div>
           <div class="datasheet__body">
-            <h3>AI-Powered Marketing Assistant</h3>
-            <p><!-- EDIT: add 2-3 sentences on the problem it solves, your role, and any results/metrics --> An agentic assistant that automates marketing workflows, built with Python and served through a Streamlit interface.</p>
+            <h3>MATLAB Projectile Motion Simulator</h3>
+            <p>An interactive MATLAB App Designer application simulating projectile motion in real time, with animations, multiple planetary environments and automatic PDF report generation.</p>
             <div class="tag-row">
-              <span class="tag">Python</span>
-              <span class="tag">Streamlit</span>
-              <span class="tag">Agentic AI</span>
+              <span class="tag">MATLAB App Designer</span>
+              <span class="tag">Simulink</span>
             </div>
           </div>
         </article>
 
         <article class="datasheet">
           <div class="datasheet__head">
-            <span class="datasheet__part">PART NO. WMS-JV-02</span>
+            <span class="datasheet__part">PART NO. INV JV 02</span>
             <span class="datasheet__status">● SHIPPED</span>
           </div>
           <div class="datasheet__body">
-            <h3>Wholesale Warehouse Management System</h3>
-            <p><!-- EDIT: describe scope — inventory, orders, users? team size? --> A Java application for tracking wholesale inventory and warehouse operations end to end.</p>
+            <h3>Inventory Management System</h3>
+            <p>A desktop inventory management system with full CRUD operations, user authentication and report generation, built around object oriented programming principles.</p>
             <div class="tag-row">
               <span class="tag">Java</span>
-              <span class="tag">OOP</span>
+              <span class="tag">Apache NetBeans</span>
+              <span class="tag">File Handling</span>
             </div>
           </div>
         </article>
 
         <article class="datasheet">
           <div class="datasheet__head">
-            <span class="datasheet__part">PART NO. HTL-03</span>
+            <span class="datasheet__part">PART NO. CARE ARD 03</span>
             <span class="datasheet__status">● SHIPPED</span>
           </div>
           <div class="datasheet__body">
-            <h3>Hotel Management System</h3>
-            <p><!-- EDIT: mention language/stack used and what it handles (bookings, billing, etc.) --> A system for managing bookings, guests, and day-to-day hotel operations.</p>
+            <h3>Smart Elderly Care System</h3>
+            <p>An IoT based elderly monitoring system incorporating fall detection, medication reminders, gas leak detection and temperature monitoring.</p>
             <div class="tag-row">
-              <span class="tag">Booking</span>
-              <span class="tag">CRUD</span>
+              <span class="tag">Arduino</span>
+              <span class="tag">Embedded Systems</span>
             </div>
           </div>
         </article>
 
         <article class="datasheet">
           <div class="datasheet__head">
-            <span class="datasheet__part">PART NO. LIB-CPP-04</span>
+            <span class="datasheet__part">PART NO. CHOC LV 04</span>
             <span class="datasheet__status">● SHIPPED</span>
           </div>
           <div class="datasheet__body">
-            <h3>Library Management System</h3>
-            <p><!-- EDIT: mention scale, features (catalogue, checkouts, overdue tracking) --> A C++ system for managing a library's catalogue, checkouts, and returns.</p>
+            <h3>Chocolate Factory Automation</h3>
+            <p>A virtual chocolate production system built in NI LabVIEW, using loops, subVIs, file handling, event logging and process monitoring.</p>
             <div class="tag-row">
-              <span class="tag">C++</span>
-              <span class="tag">Data Structures</span>
+              <span class="tag">NI LabVIEW</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="datasheet datasheet--full">
+          <div class="datasheet__head">
+            <span class="datasheet__part">PART NO. VHDL 05</span>
+            <span class="datasheet__status">● SHIPPED</span>
+          </div>
+          <div class="datasheet__body">
+            <h3>Digital System Design using VHDL</h3>
+            <p>Designed and simulated digital circuits in VHDL, including counters, seven segment displays and combinational logic.</p>
+            <div class="tag-row">
+              <span class="tag">VHDL</span>
+              <span class="tag">GHDL</span>
+              <span class="tag">EPWave</span>
             </div>
           </div>
         </article>
@@ -652,29 +687,59 @@
   <section class="section" id="skills">
     <div class="reg-mark tl"></div><div class="reg-mark tr"></div>
     <div class="wrap reveal">
-      <span class="eyebrow">03 — Skills</span>
-      <h2 style="font-size:clamp(1.8rem,4vw,2.4rem); margin-top:14px;">Bill of materials.</h2>
+      <span class="eyebrow">03. Skills</span>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.4rem); margin-top:14px; color:var(--navy-mid);">Bill of materials.</h2>
       <table class="bom">
         <thead>
           <tr><th>Ref</th><th>Component</th><th>Notes</th></tr>
         </thead>
         <tbody>
-          <tr><td>U1</td><td>Python</td><td>Scripting, automation, agentic AI</td></tr>
-          <tr><td>U2</td><td>Java</td><td>Object-oriented application development</td></tr>
-          <tr><td>U3</td><td>C++</td><td>Systems &amp; data-structure heavy programs</td></tr>
-          <tr><td>U4</td><td>VHDL</td><td>RTL &amp; digital logic design</td></tr>
-          <tr><td>U5</td><td>MATLAB</td><td>Simulation &amp; signal analysis</td></tr>
-          <tr><td>U6</td><td>Cisco Packet Tracer</td><td>Network design &amp; simulation</td></tr>
-          <tr><td>U7</td><td>LTSpice</td><td>Circuit simulation</td></tr>
-          <tr><td>U8</td><td>Git / GitHub / VS Code</td><td>Version control &amp; dev environment</td></tr>
-          <tr><td>U9</td><td>Simulink</td><td>Model-based simulation</td></tr>
-          <tr><td>U10</td><td>GHDL 0.36</td><td>VHDL compilation &amp; simulation</td></tr>
-          <tr><td>U11</td><td>AWS</td><td>Cloud fundamentals</td></tr>
+          <tr class="bom-cat"><td colspan="3">Programming</td></tr>
+          <tr><td>U1</td><td>C++</td><td>Systems &amp; data structure heavy programs</td></tr>
+          <tr><td>U2</td><td>Python</td><td>Scripting &amp; automation</td></tr>
+          <tr><td>U3</td><td>Java</td><td>Object oriented application development</td></tr>
+          <tr><td>U4</td><td>MATLAB</td><td>Simulation &amp; signal analysis</td></tr>
+          <tr><td>U5</td><td>VHDL</td><td>RTL &amp; digital logic design</td></tr>
+
+          <tr class="bom-cat"><td colspan="3">Engineering &amp; Embedded</td></tr>
+          <tr><td>U6</td><td>Arduino</td><td>Embedded prototyping</td></tr>
+          <tr><td>U7</td><td>Digital Logic Design</td><td>Combinational &amp; sequential logic</td></tr>
+          <tr><td>U8</td><td>Simulink</td><td>Model based simulation</td></tr>
+          <tr><td>U9</td><td>LTSpice</td><td>Circuit simulation</td></tr>
+          <tr><td>U10</td><td>NI LabVIEW</td><td>Virtual instrumentation</td></tr>
+          <tr><td>U11</td><td>GHDL</td><td>VHDL compilation &amp; simulation</td></tr>
+          <tr><td>U12</td><td>EPWave</td><td>Waveform viewing</td></tr>
+
+          <tr class="bom-cat"><td colspan="3">Networking &amp; Cloud</td></tr>
+          <tr><td>U13</td><td>AWS</td><td>Cloud fundamentals</td></tr>
+          <tr><td>U14</td><td>Cisco Packet Tracer</td><td>Network design &amp; simulation</td></tr>
+          <tr><td>U15</td><td>Computer Networks</td><td>Networking fundamentals</td></tr>
+
+          <tr class="bom-cat"><td colspan="3">Development Tools</td></tr>
+          <tr><td>U16</td><td>Git / GitHub</td><td>Version control</td></tr>
+          <tr><td>U17</td><td>Visual Studio / VS Code</td><td>Dev environment</td></tr>
+          <tr><td>U18</td><td>Apache NetBeans</td><td>Java IDE</td></tr>
+          <tr><td>U19</td><td>Streamlit</td><td>App prototyping</td></tr>
+          <tr><td>U20</td><td>Anaconda</td><td>Python environment management</td></tr>
+
+          <tr class="bom-cat"><td colspan="3">Productivity</td></tr>
+          <tr><td>U21</td><td>Microsoft Office</td><td>Word, Excel, PowerPoint</td></tr>
         </tbody>
       </table>
       <div class="badge-row">
+        <span class="badge">CERT · <strong>MATLAB Onramp</strong></span>
+        <span class="badge">CERT · <strong>Introduction to AI Agents</strong></span>
+        <span class="badge">CERT · <strong>Agent Fundamentals</strong></span>
         <span class="badge">CERT · <strong>Google Prompting Essentials</strong></span>
-        <span class="badge">CERT · <strong>Google Agent Fundamentals</strong></span>
+      </div>
+      <div class="tag-row" style="margin-top:18px;">
+        <span class="tag">Problem Solving</span>
+        <span class="tag">Communication</span>
+        <span class="tag">Teamwork</span>
+        <span class="tag">Leadership</span>
+        <span class="tag">Time Management</span>
+        <span class="tag">Organization</span>
+        <span class="tag">Attention to Detail</span>
       </div>
     </div>
   </section>
@@ -683,18 +748,54 @@
   <section class="section" id="leadership">
     <div class="reg-mark tl"></div><div class="reg-mark tr"></div>
     <div class="wrap reveal">
-      <span class="eyebrow">04 — Leadership</span>
-      <h2 style="font-size:clamp(1.8rem,4vw,2.4rem); margin-top:14px;">Design, applied to teams.</h2>
+      <span class="eyebrow">04. Leadership</span>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.4rem); margin-top:14px; color:var(--navy-mid);">Leadership, on and off campus.</h2>
       <div class="stamp-grid">
         <div class="stamp">
-          <span class="stamp__eyebrow">APRIL 2026 — PRESENT</span>
+          <span class="stamp__eyebrow">APRIL 2026 TO PRESENT</span>
           <h3>Head of Design</h3>
-          <p>IMechE APU Student Chapter — directing the design team's visual branding, event materials, and promotional content, and coordinating with committee members to keep deliverables aligned with event timelines.</p>
+          <p>IMechE APU Student Chapter: directing the design team's visual branding, event materials and promotional content, and coordinating with committee members to keep deliverables aligned with event timelines.</p>
         </div>
         <div class="stamp">
           <span class="stamp__eyebrow">CURRENT ROLE</span>
           <h3>Head of Design, ICDTSA '26</h3>
-          <p>International Conference on Digital Technologies for Sustainable Agriculture — a joint APcore × IMechE × APU conference.</p>
+          <p>International Conference on Digital Technologies for Sustainable Agriculture, a joint APcore × IMechE × APU conference.</p>
+        </div>
+        <div class="stamp">
+          <span class="stamp__eyebrow">JULY 2026 TO PRESENT</span>
+          <h3>Project Director</h3>
+          <p>Indian Cultural and Youth Society: leading a mural painting volunteering project on a temple wall to help give the community a nicer, more welcoming space.</p>
+        </div>
+        <div class="stamp">
+          <span class="stamp__eyebrow">AUG 2025 TO SEP 2025</span>
+          <h3>Assistant Leader &amp; PR Coordinator</h3>
+          <p>APU: coordinated a 2 hour campus talk with Ms. Anusia Ramasamy, Founder &amp; CEO of AverNoble Sdn Bhd. Managed speaker communications and event day logistics, and designed the event poster and promotional content.</p>
+        </div>
+        <div class="stamp">
+          <span class="stamp__eyebrow">AUG 2025 TO SEP 2025</span>
+          <h3>Student Volunteer</h3>
+          <p>APU Mega Career Fair 2025: assisted with event setup, registration and crowd management, guiding attendees and facilitating communication between recruiters and participants.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section class="section" id="work">
+    <div class="reg-mark tl"></div><div class="reg-mark tr"></div>
+    <div class="wrap reveal">
+      <span class="eyebrow">05. Work Experience</span>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.4rem); margin-top:14px; color:var(--navy-mid);">Time on the floor.</h2>
+      <div class="stamp-grid stamp-grid--pair">
+        <div class="stamp">
+          <span class="stamp__eyebrow">NOVEMBER 2025</span>
+          <h3>Part Time Administrative Assistant</h3>
+          <p>Avernoble Sdn Bhd: prepared and formatted documents and presentations, managed records and data entry and maintained organized filing systems, coordinating with team members to ensure accurate documentation.</p>
+        </div>
+        <div class="stamp">
+          <span class="stamp__eyebrow">MARCH 2024 TO APRIL 2025</span>
+          <h3>Part Time Sales Staff</h3>
+          <p>Cotton On Group: assisted customers with product selection and enquiries, processed sales transactions, replenished merchandise and maintained store presentation in a fast paced retail environment.</p>
         </div>
       </div>
     </div>
@@ -705,7 +806,7 @@
 <!-- FOOTER / TITLE BLOCK -->
 <footer class="footer" id="contact">
   <div class="wrap">
-    <span class="eyebrow">05 — Contact</span>
+    <span class="eyebrow">06. Contact</span>
     <h2>Let's build something together.</h2>
     <div class="titleblock">
       <div class="titleblock__cell">
@@ -718,7 +819,7 @@
       </div>
       <div class="titleblock__cell">
         <span class="titleblock__label">AVAILABILITY</span>
-        <span class="titleblock__value">16-week internship, Oct '26–Feb '27</span>
+        <span class="titleblock__value">16 week internship, Oct '26 to Feb '27</span>
       </div>
       <div class="titleblock__cell">
         <span class="titleblock__label">MOBILITY</span>
